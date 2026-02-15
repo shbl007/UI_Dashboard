@@ -1,0 +1,857 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Applify Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="app-shell">
+      <!-- SIDEBAR (Desktop) -->
+      <aside class="sidebar d-none d-lg-flex">
+        <div class="sidebar__top">
+          <div class="brand">
+            <div class="brand__logo">
+              <i class="fa-solid fa-fan"></i>
+            </div>
+            <div class="brand__name">Applify.</div>
+          </div>
+
+          <nav class="sidebar__nav mt-4">
+            <a class="nav-item active" href="#">
+              <span class="nav-icon"
+                ><i class="fa-solid fa-table-columns"></i
+              ></span>
+              <span class="nav-text">Dashboard</span>
+            </a>
+
+            <a class="nav-item" href="#">
+              <span class="nav-icon"
+                ><i class="fa-regular fa-briefcase"></i
+              ></span>
+              <span class="nav-text">Jobs</span>
+            </a>
+
+            <a class="nav-item" href="#">
+              <span class="nav-icon"
+                ><i class="fa-regular fa-calendar"></i
+              ></span>
+              <span class="nav-text">Schedule</span>
+            </a>
+
+            <a class="nav-item" href="#">
+              <span class="nav-icon"
+                ><i class="fa-regular fa-folder-open"></i
+              ></span>
+              <span class="nav-text">Documents</span>
+            </a>
+
+            <a class="nav-item" href="#">
+              <span class="nav-icon"
+                ><i class="fa-solid fa-chart-simple"></i
+              ></span>
+              <span class="nav-text">Statistics</span>
+            </a>
+
+            <a class="nav-item" href="#">
+              <span class="nav-icon"><i class="fa-solid fa-users"></i></span>
+              <span class="nav-text">Community</span>
+            </a>
+
+            <a class="nav-item" href="#">
+              <span class="nav-icon"
+                ><i class="fa-regular fa-message"></i
+              ></span>
+              <span class="nav-text">Messages</span>
+            </a>
+          </nav>
+        </div>
+
+        <div class="sidebar__bottom">
+          <a class="nav-item text-danger" href="#">
+            <span class="nav-icon"
+              ><i class="fa-solid fa-right-from-bracket"></i
+            ></span>
+            <span class="nav-text">Logout</span>
+          </a>
+
+          <div class="upgrade-card mt-3">
+            <div class="upgrade-illu">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <div class="upgrade-title">Upgrade to Premium</div>
+            <div class="upgrade-sub">Go Pro to unlock more features</div>
+            <button class="btn btn-primary btn-sm w-100 mt-2">Upgrade</button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- OFFCANVAS SIDEBAR (Mobile) -->
+      <div
+        class="offcanvas offcanvas-start offcanvas-sidebar"
+        tabindex="-1"
+        id="mobileSidebar"
+        aria-labelledby="mobileSidebarLabel"
+      >
+        <div class="offcanvas-header">
+          <div class="brand">
+            <div class="brand__logo">
+              <i class="fa-solid fa-fan"></i>
+            </div>
+            <div class="brand__name">Applify.</div>
+          </div>
+
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+
+        <div class="offcanvas-body">
+          <nav class="sidebar__nav">
+            <a class="nav-item active" href="#">
+              <span class="nav-icon"
+                ><i class="fa-solid fa-table-columns"></i
+              ></span>
+              <span class="nav-text">Dashboard</span>
+            </a>
+
+            <a class="nav-item" href="#">
+              <span class="nav-icon"
+                ><i class="fa-regular fa-briefcase"></i
+              ></span>
+              <span class="nav-text">Jobs</span>
+            </a>
+
+            <a class="nav-item" href="#">
+              <span class="nav-icon"
+                ><i class="fa-regular fa-calendar"></i
+              ></span>
+              <span class="nav-text">Schedule</span>
+            </a>
+
+            <a class="nav-item" href="#">
+              <span class="nav-icon"
+                ><i class="fa-regular fa-folder-open"></i
+              ></span>
+              <span class="nav-text">Documents</span>
+            </a>
+
+            <a class="nav-item" href="#">
+              <span class="nav-icon"
+                ><i class="fa-solid fa-chart-simple"></i
+              ></span>
+              <span class="nav-text">Statistics</span>
+            </a>
+
+            <a class="nav-item" href="#">
+              <span class="nav-icon"><i class="fa-solid fa-users"></i></span>
+              <span class="nav-text">Community</span>
+            </a>
+
+            <a class="nav-item" href="#">
+              <span class="nav-icon"
+                ><i class="fa-regular fa-message"></i
+              ></span>
+              <span class="nav-text">Messages</span>
+            </a>
+
+            <hr class="my-3" />
+
+            <a class="nav-item text-danger" href="#">
+              <span class="nav-icon"
+                ><i class="fa-solid fa-right-from-bracket"></i
+              ></span>
+              <span class="nav-text">Logout</span>
+            </a>
+          </nav>
+
+          <div class="upgrade-card mt-4">
+            <div class="upgrade-illu">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <div class="upgrade-title">Upgrade to Premium</div>
+            <div class="upgrade-sub">Go Pro to unlock more features</div>
+            <button class="btn btn-primary btn-sm w-100 mt-2">Upgrade</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- OFFCANVAS PROFILE (Mobile) -->
+      <div
+        class="offcanvas offcanvas-end offcanvas-profile"
+        tabindex="-1"
+        id="mobileProfile"
+        aria-labelledby="mobileProfileLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="m-0 fw-bold" id="mobileProfileLabel">Profile</h5>
+
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+
+        <div class="offcanvas-body p-0">
+          <div class="card soft-card right-panel right-panel--mobile">
+            <!-- PROFILE -->
+            <div class="profile-head">
+              <div class="profile-avatar">
+                <img
+                  src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=512&auto=format&fit=crop"
+                  alt="Candace"
+                />
+              </div>
+
+              <div class="profile-name">Candace Jules</div>
+              <div class="profile-role">Director of Recruiting</div>
+              <div class="profile-loc">
+                <i class="fa-solid fa-location-dot"></i> New York, US
+              </div>
+            </div>
+
+            <!-- JOBS -->
+            <div class="panel-section">
+              <div class="section-head">
+                <div class="section-title">Jobs Posted</div>
+                <button class="btn btn-primary btn-sm">
+                  <i class="fa-solid fa-plus"></i> Add
+                </button>
+              </div>
+
+              <div class="job-card job-orange">
+                <div class="job-count">95</div>
+                <div class="job-meta">
+                  <div class="job-title">Sr. Android Developer</div>
+                  <div class="job-sub">Total Applications</div>
+                </div>
+                <div class="job-toggle">
+                  <div class="mini-switch on"></div>
+                </div>
+              </div>
+
+              <div class="job-card job-purple">
+                <div class="job-count">80</div>
+                <div class="job-meta">
+                  <div class="job-title">UX/UI Designer</div>
+                  <div class="job-sub">Total Applications</div>
+                </div>
+                <div class="job-toggle">
+                  <div class="mini-switch"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- REMINDERS -->
+            <div class="panel-section">
+              <div class="section-head">
+                <div class="section-title">Reminders</div>
+                <button class="icon-btn small" aria-label="Notifications">
+                  <i class="fa-regular fa-bell"></i>
+                </button>
+              </div>
+
+              <div class="reminder-list">
+                <div class="reminder-item">
+                  <div class="rem-icon bg-purple-soft">
+                    <i class="fa-regular fa-clock"></i>
+                  </div>
+                  <div class="rem-body">
+                    <div class="rem-title">
+                      Your subscription expires Today.
+                    </div>
+                    <div class="rem-sub">Renew Now</div>
+                  </div>
+                  <div class="rem-time">6:30 PM</div>
+                </div>
+
+                <div class="reminder-item">
+                  <div class="rem-icon bg-yellow-soft">
+                    <i class="fa-regular fa-file-lines"></i>
+                  </div>
+                  <div class="rem-body">
+                    <div class="rem-title">
+                      There are 4 new applications for IOS Developer Post.
+                    </div>
+                  </div>
+                  <div class="rem-time">5:30 PM</div>
+                </div>
+
+                <div class="reminder-item">
+                  <div class="rem-icon bg-red-soft">
+                    <i class="fa-regular fa-circle-xmark"></i>
+                  </div>
+                  <div class="rem-body">
+                    <div class="rem-title">
+                      You have closed the job post for Design Lead.
+                    </div>
+                  </div>
+                  <div class="rem-time">5:00 PM</div>
+                </div>
+
+                <div class="reminder-item">
+                  <div class="rem-icon bg-green-soft">
+                    <i class="fa-regular fa-circle-check"></i>
+                  </div>
+                  <div class="rem-body">
+                    <div class="rem-title">
+                      You have drafted a job post for Web Developer.
+                    </div>
+                  </div>
+                  <div class="rem-time">4:45 PM</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAIN CONTENT -->
+      <main class="main">
+        <!-- Topbar -->
+        <div class="topbar">
+          <div class="d-flex align-items-center gap-3">
+            <button
+              class="btn btn-ghost d-lg-none"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#mobileSidebar"
+              aria-controls="mobileSidebar"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <h1 class="page-title m-0">Dashboard</h1>
+          </div>
+
+          <div class="topbar__right">
+            <div class="search-wrap d-none d-md-flex">
+              <input type="text" placeholder="Search" />
+              <button type="button" class="search-btn" aria-label="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+
+            <!-- Avatar opens profile offcanvas on mobile -->
+            <button
+              class="avatar-btn d-xl-none"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#mobileProfile"
+              aria-controls="mobileProfile"
+            >
+              <div class="avatar">
+                <img
+                  src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=256&auto=format&fit=crop"
+                  alt="User"
+                />
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Dashboard body -->
+        <div class="container-fluid px-0">
+          <div class="row g-3">
+            <div class="col-12">
+              <!-- Stats -->
+              <div class="row g-3">
+                <div class="col-12 col-md-4">
+                  <div class="card soft-card stat-card">
+                    <div
+                      class="d-flex justify-content-between align-items-start"
+                    >
+                      <div>
+                        <div class="stat-label">Total Applications</div>
+                        <div class="stat-value">5672</div>
+                        <div class="stat-sub text-success">
+                          <i class="fa-solid fa-arrow-up"></i> +14% Inc
+                        </div>
+                      </div>
+
+                      <div class="card-chart-mini">
+                        <div
+                          class="circle-progress"
+                          data-value="74"
+                          data-color="#6236FF"
+                        >
+                          <span>+74%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                  <div class="card soft-card stat-card">
+                    <div
+                      class="d-flex justify-content-between align-items-start"
+                    >
+                      <div>
+                        <div class="stat-label">Shortlisted Candidates</div>
+                        <div class="stat-value">3045</div>
+                        <div class="stat-sub text-warning">
+                          <i class="fa-solid fa-arrow-up"></i> +06% Inc
+                        </div>
+                      </div>
+
+                      <div class="card-chart-mini">
+                        <div
+                          class="circle-progress"
+                          data-value="60"
+                          data-color="#FFD541"
+                        >
+                          <span>+60%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                  <div class="card soft-card stat-card">
+                    <div
+                      class="d-flex justify-content-between align-items-start"
+                    >
+                      <div>
+                        <div class="stat-label">Rejected Candidates</div>
+                        <div class="stat-value">1055</div>
+                        <div class="stat-sub text-danger">
+                          <i class="fa-solid fa-arrow-down"></i> -04% Dec
+                        </div>
+                      </div>
+
+                      <div class="card-chart-mini">
+                        <div
+                          class="circle-progress"
+                          data-value="46"
+                          data-color="#FF8E5E"
+                        >
+                          <span>+46%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Charts -->
+              <div class="row g-3 mt-1">
+                <div class="col-12 col-lg-7">
+                  <div class="card soft-card h-100">
+                    <div class="card-head">
+                      <div class="card-title">
+                        Statistics of Active Applications
+                      </div>
+
+                      <div class="dropdown">
+                        <button
+                          class="btn btn-light btn-sm dropdown-toggle d-flex align-items-center gap-2"
+                          type="button"
+                          data-bs-toggle="dropdown"
+                        >
+                          <i class="fa-regular fa-calendar"></i>
+                          <span>Week</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                          <li><a class="dropdown-item" href="#">Week</a></li>
+                          <li><a class="dropdown-item" href="#">Month</a></li>
+                          <li><a class="dropdown-item" href="#">Year</a></li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="chart-wrap">
+                      <canvas id="activeApplicationsChart"></canvas>
+                    </div>
+
+                    <div class="legend-row mt-2" id="activeAppsLegend">
+                      <button
+                        class="legend-pill is-on"
+                        type="button"
+                        data-dataset="0"
+                        data-color="purple"
+                      >
+                        <span class="pill-switch"></span>
+                        <span>Applications</span>
+                      </button>
+
+                      <button
+                        class="legend-pill is-on"
+                        type="button"
+                        data-dataset="1"
+                        data-color="yellow"
+                      >
+                        <span class="pill-switch"></span>
+                        <span>Shortlisted</span>
+                      </button>
+
+                      <button
+                        class="legend-pill is-on"
+                        type="button"
+                        data-dataset="2"
+                        data-color="orange"
+                      >
+                        <span class="pill-switch"></span>
+                        <span>Rejected</span>
+                      </button>
+
+                      <button
+                        class="legend-pill is-on"
+                        type="button"
+                        data-dataset="3"
+                        data-color="gray"
+                      >
+                        <span class="pill-switch"></span>
+                        <span>On Hold</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-5">
+                  <div class="card soft-card h-100">
+                    <div class="card-head">
+                      <div class="card-title">Acquisitions</div>
+
+                      <div class="dropdown">
+                        <button
+                          class="btn btn-light btn-sm dropdown-toggle d-flex align-items-center gap-2"
+                          type="button"
+                          data-bs-toggle="dropdown"
+                        >
+                          <i class="fa-regular fa-calendar"></i>
+                          <span>Month</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                          <li><a class="dropdown-item" href="#">Month</a></li>
+                          <li><a class="dropdown-item" href="#">Quarter</a></li>
+                          <li><a class="dropdown-item" href="#">Year</a></li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="acq-list">
+                      <div class="acq-row">
+                        <div class="acq-left">
+                          <span class="dot dot-purple"></span>
+                          <span>Applications</span>
+                        </div>
+
+                        <div class="acq-bar">
+                          <span
+                            class="acq-fill fill-purple"
+                            style="width: 80%"
+                          ></span>
+                        </div>
+
+                        <div class="acq-val">80%</div>
+                      </div>
+
+                      <div class="acq-row">
+                        <div class="acq-left">
+                          <span class="dot dot-yellow"></span>
+                          <span>Shortlisted</span>
+                        </div>
+
+                        <div class="acq-bar">
+                          <span
+                            class="acq-fill fill-yellow"
+                            style="width: 55%"
+                          ></span>
+                        </div>
+
+                        <div class="acq-val">55%</div>
+                      </div>
+
+                      <div class="acq-row">
+                        <div class="acq-left">
+                          <span class="dot dot-orange"></span>
+                          <span>Rejected</span>
+                        </div>
+
+                        <div class="acq-bar">
+                          <span
+                            class="acq-fill fill-orange"
+                            style="width: 47%"
+                          ></span>
+                        </div>
+
+                        <div class="acq-val">47%</div>
+                      </div>
+
+                      <div class="acq-row">
+                        <div class="acq-left">
+                          <span class="dot dot-gray"></span>
+                          <span>On Hold</span>
+                        </div>
+
+                        <div class="acq-bar">
+                          <span
+                            class="acq-fill fill-gray"
+                            style="width: 35%"
+                          ></span>
+                        </div>
+
+                        <div class="acq-val">35%</div>
+                      </div>
+
+                      <div class="acq-row">
+                        <div class="acq-left">
+                          <span class="dot dot-green"></span>
+                          <span>Finalised</span>
+                        </div>
+
+                        <div class="acq-bar">
+                          <span
+                            class="acq-fill fill-green"
+                            style="width: 24%"
+                          ></span>
+                        </div>
+
+                        <div class="acq-val">24%</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bottom charts -->
+              <div class="row g-3 mt-1">
+                <div class="col-12 col-lg-7">
+                  <div class="card soft-card h-100">
+                    <div class="card-head">
+                      <div class="card-title">Applications Received Time</div>
+
+                      <div class="dropdown">
+                        <button
+                          class="btn btn-light btn-sm dropdown-toggle d-flex align-items-center gap-2"
+                          type="button"
+                          data-bs-toggle="dropdown"
+                        >
+                          <i class="fa-regular fa-calendar"></i>
+                          <span>Today</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                          <li><a class="dropdown-item" href="#">Today</a></li>
+                          <li>
+                            <a class="dropdown-item" href="#">This Week</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#">This Month</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="chart-wrap">
+                      <canvas id="applicationsTimeChart"></canvas>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-5">
+                  <div class="card soft-card h-100">
+                    <div class="card-head">
+                      <div class="card-title">Candidates by Gender</div>
+                    </div>
+
+                    <div class="donut-wrap">
+                      <div class="donut-canvas-wrap">
+                        <canvas id="genderChart"></canvas>
+                        <div class="donut-center">
+                          <i class="fa-solid fa-venus-mars"></i>
+                        </div>
+                      </div>
+
+                      <div class="donut-legend">
+                        <span class="legend-item">
+                          <span class="dot dot-purple"></span> Male
+                        </span>
+                        <span class="legend-item">
+                          <span class="dot dot-orange"></span> Female
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end col -->
+          </div>
+        </div>
+      </main>
+
+      <!-- RIGHT PANEL (Desktop fixed) -->
+      <aside class="d-none d-xl-block">
+        <div class="right-sticky">
+          <div class="card soft-card right-panel">
+            <div class="panel-avatar-wrap gap-2">
+              <button class="icon-btn" aria-label="Help">
+                <i class="fa-regular fa-circle-question"></i>
+              </button>
+
+              <button class="icon-btn" aria-label="Settings">
+                <i class="fa-solid fa-gear"></i>
+              </button>
+              <!-- Desktop avatar -->
+              <div class="d-none d-xl-flex align-items-center gap-1">
+                <div class="avatar">
+                  <img
+                    src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=256&auto=format&fit=crop"
+                    alt="User"
+                  />
+                </div>
+
+                <button class="chev-btn" aria-label="Open profile menu">
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+              </div>
+            </div>
+            <!-- PROFILE -->
+            <div class="profile-head">
+              <div class="profile-avatar">
+                <img
+                  src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=512&auto=format&fit=crop"
+                  alt="Candace"
+                />
+              </div>
+
+              <div class="profile-name">Candace Jules</div>
+              <div class="profile-role">Director of Recruiting</div>
+              <div class="profile-loc">
+                <i class="fa-solid fa-location-dot"></i> New York, US
+              </div>
+            </div>
+
+            <!-- JOBS -->
+            <div class="panel-section">
+              <div class="section-head">
+                <div class="section-title">Jobs Posted</div>
+                <button class="btn btn-primary btn-sm">
+                  <i class="fa-solid fa-plus"></i> Add
+                </button>
+              </div>
+
+              <div class="job-card job-orange">
+                <div class="job-count">95</div>
+                <div class="job-meta">
+                  <div class="job-title">Sr. Android Developer</div>
+                  <div class="job-sub">Total Applications</div>
+                </div>
+                <div class="job-toggle">
+                  <div class="mini-switch on"></div>
+                </div>
+              </div>
+
+              <div class="job-card job-purple">
+                <div class="job-count">80</div>
+                <div class="job-meta">
+                  <div class="job-title">UX/UI Designer</div>
+                  <div class="job-sub">Total Applications</div>
+                </div>
+                <div class="job-toggle">
+                  <div class="mini-switch"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- REMINDERS -->
+            <div class="panel-section">
+              <div class="section-head">
+                <div class="section-title">Reminders</div>
+                <button class="icon-btn small" aria-label="Notifications">
+                  <i class="fa-regular fa-bell"></i>
+                </button>
+              </div>
+
+              <div class="reminder-list">
+                <div class="reminder-item">
+                  <div class="rem-icon bg-purple-soft">
+                    <i class="fa-regular fa-clock"></i>
+                  </div>
+                  <div class="rem-body">
+                    <div class="rem-title">
+                      Your subscription expires Today.
+                    </div>
+                    <div class="rem-sub">Renew Now</div>
+                  </div>
+                  <div class="rem-time">6:30 PM</div>
+                </div>
+
+                <div class="reminder-item">
+                  <div class="rem-icon bg-yellow-soft">
+                    <i class="fa-regular fa-file-lines"></i>
+                  </div>
+                  <div class="rem-body">
+                    <div class="rem-title">
+                      There are 4 new applications for IOS Developer Post.
+                    </div>
+                  </div>
+                  <div class="rem-time">5:30 PM</div>
+                </div>
+
+                <div class="reminder-item">
+                  <div class="rem-icon bg-red-soft">
+                    <i class="fa-regular fa-circle-xmark"></i>
+                  </div>
+                  <div class="rem-body">
+                    <div class="rem-title">
+                      You have closed the job post for Design Lead.
+                    </div>
+                  </div>
+                  <div class="rem-time">5:00 PM</div>
+                </div>
+
+                <div class="reminder-item">
+                  <div class="rem-icon bg-green-soft">
+                    <i class="fa-regular fa-circle-check"></i>
+                  </div>
+                  <div class="rem-body">
+                    <div class="rem-title">
+                      You have drafted a job post for Web Developer.
+                    </div>
+                  </div>
+                  <div class="rem-time">4:45 PM</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="./script.js"></script>
+  </body>
+</html>
